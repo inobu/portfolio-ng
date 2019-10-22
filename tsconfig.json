@@ -3,6 +3,9 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
+      "@portfolio/auth": [
+        "app/auth"
+      ],
       "@portfolio/material": [
         "app/material"
       ]
