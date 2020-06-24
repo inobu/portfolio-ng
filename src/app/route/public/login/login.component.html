@@ -1,16 +1,38 @@
-<portfolio-public>
+<portfolio-public fxLayout="row">
     <div>
         <h1>instalike</h1>
-        <form>
+        <form [formGroup]="loginForm">
             <mat-form-field class="example-full-width">
                 <input
                     matInput
-                    placeholder="Favorite food"
+                    formControlName="email"
+                    type="email"
+                >
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input
+                    matInput
+                    formControlName="password"
+                    type="password"
                 >
             </mat-form-field>
             <div>
-                <button class="submit">送信</button>
+                <button
+                    class="submit"
+                    (click)="onSubmitLogin(loginForm.value)"
+                >
+                    送信
+                </button>
             </div>
         </form>
+    </div>
+
+    <div>
+        <a
+            [routerLink]="[ '/signup' ]"
+            routerLinkActive="active"
+        >
+            未登録の方はこちら
+        </a>
     </div>
 </portfolio-public>
